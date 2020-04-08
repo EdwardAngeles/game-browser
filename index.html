@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <title>Game Browser</title>
+</head>
+<body>
+  <div class="container border shadow-sm p-4 my-4">
+    <h1 class="text-center pb-3">🎯 Game Browser</h1>
+    
+    <!-- row search -->
+    <div class="row w-75 mx-auto">
+      <div class="col-8">
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text"><i class="fas fa-gamepad"></i></span>
+          </div>
+          <input type="text" class="form-control" placeholder="Game Title">
+        </div>
+      </div>
+      <div class="col-4">
+        <button class="btn btn-primary btn-block"><span class="font-weight-bold">Search</span></button>
+      </div>
+    </div> <!-- /row search -->
+    
+    <div class="my-2"></div>
+    
+    <!-- row options -->
+    <div class="row w-75 mx-auto">
+      <!-- col gender -->
+      <div class="col-4">
+        <p class="m-0">Gender: </p>
+        <div class="input-group">
+          <input type="text" class="form-control bg-white" aria-label="Text input with dropdown button" value="All" disabled>
+          <div class="input-group-append">
+            <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-reference="parent"></button>
+            <div class="dropdown-menu  dropdown-menu-right">
+              <a class="dropdown-item" href="#">All</a>
+              <a class="dropdown-item" href="#">Action</a>
+              <a class="dropdown-item" href="#">Another action</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- col year -->
+      <div class="col-4">
+        <p class="m-0">Released Year: </p>
+        <div class="input-group">
+          <input type="text" class="form-control bg-white" aria-label="Text input with dropdown button" value="Any" disabled>
+          <div class="input-group-append">
+            <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-reference="parent"></button>
+            <div class="dropdown-menu  dropdown-menu-right">
+              <a class="dropdown-item" href="#">Any</a>
+              <a class="dropdown-item" href="#">Action</a>
+              <a class="dropdown-item" href="#">Another action</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-4">
+        <p class="m-0">Platform: </p>
+        <div class="input-group">
+          <input type="text" class="form-control bg-white" aria-label="Text input with dropdown button" value="All" disabled>
+          <div class="input-group-append">
+            <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-reference="parent"></button>
+            <div class="dropdown-menu  dropdown-menu-right">
+              <a class="dropdown-item" href="#">All</a>
+              <a class="dropdown-item" href="#">Action</a>
+              <a class="dropdown-item" href="#">Another action</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> <!-- /row options -->
+    
+    <br>
+    <hr>
+    <br>
+    
+    <div class="results">
+      <div class="row">
+        <!-- left col -->
+        <div class="col-md-6">
+          <div class="card shadow-sm">
+            <img class="card-img-top card-thumbnail cover" src="https://images.pexels.com/photos/442576/pexels-photo-442576.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260" alt="Card image cap">
+            <div class="card-body">
+              <h4 class="card-title">Game Title</h4>
+              <p class="card-text">
+                Some quick example text to build on the card title
+                and make up the bulk of the card's content.
+              </p>
+              <a href="#!" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>          
+        </div>
+        <!-- right col -->
+        <div class="col-md-6">
+          <div class="card">
+            <img class="card-img-top card-thumbnail cover" src="https://media.rawg.io/media/games/b11/b115b2bc6a5957a917bc7601f4abdda2.jpg" alt="Card image cap">
+            <div class="card-body">
+              <h4 class="card-title">Game Title</h4>
+              <p class="card-text">
+                Some quick example text to build on the card title
+                and make up the bulk of the card's content.
+              </p>
+              <a href="#!" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>          
+        </div>
+      </div>
+    </div>
+  </div> <!-- /container -->
+  
+  <!-- Bootstrap -->
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,11 @@
+/* input[type="text"]:disabled {
+  background: #ffffff;
+} */
+
+.card-thumbnail {
+  height: 300px;
+}
+
+.cover {
+  object-fit: cover;
+}
