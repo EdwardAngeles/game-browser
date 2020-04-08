@@ -9,3 +9,9 @@
 .cover {
   object-fit: cover;
 }
+
+.scrollable-menu {
+  height: auto;
+  max-height: 20rem;
+  overflow-x: hidden;
+}
