@@ -11,83 +11,99 @@
 </head>
 <body>
   <div class="container border border-top-0 shadow-sm p-4 mb-4">
-    <h1 class="text-center pb-3">🎯 Game Browser</h1>
+    <h1 class="text-center mb-5">🎯 Game Browser</h1>
     
-    <!-- row search -->
-    <div class="row w-75 mx-auto">
-      <div class="col-8">
-        <div class="input-group">
-          <div class="input-group-prepend">
-            <span class="input-group-text"><i class="fas fa-gamepad"></i></span>
+    <!--⬇ form ⬇-->
+    <form>
+      <!--⬇ row search ⬇-->
+      <div class="row w-75 mx-auto">
+        <div class="col-8">
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text"><i class="fas fa-gamepad"></i></span>
+            </div>
+            <input type="text" id="input-title" class="form-control" placeholder="Game Title">
           </div>
-          <input type="text" id="input-title" class="form-control" placeholder="Game Title">
+        </div>
+        <div class="col-4">
+          <button id="btn-search" type="submit" class="btn btn-primary btn-block"><span class="font-weight-bold">Search</span></button>
         </div>
       </div>
-      <div class="col-4">
-        <button id="btn-search" class="btn btn-primary btn-block"><span class="font-weight-bold">Search</span></button>
-      </div>
-    </div> <!-- /row search -->
-    
-    <div class="my-2"></div>
-    
-    <!-- row options -->
-    <div class="row w-75 mx-auto">
-      <!-- col gender -->
-      <div class="col-4">
-        <p class="m-0">Gender: </p>
-        <div class="input-group">
-          <input type="text" id="input-genre" api-value="" api-id="none" class="form-control bg-white" aria-label="Text input with dropdown button" value="All" disabled>
-          <div class="input-group-append">
-            <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-reference="parent"></button>
-            <div id="dropdown-menu-genrer" class="dropdown-menu dropdown-menu-right scrollable-menu">
-              <a class="dropdown-item active" href="#" api-value="">All</a>
+      <!--⬆ row search ⬆-->
+      
+      <div class="my-2"></div>
+      
+      <!--⬇ row options ⬇-->
+      <div class="row w-75 mx-auto">
+        <!--⬇ col gender ⬇-->
+        <div class="col-4">
+          <p class="m-0">Gender: </p>
+          <div class="input-group">
+            <input type="text" id="input-genre" api-value="" api-id="none" class="form-control bg-white" aria-label="Text input with dropdown button" value="All" disabled>
+            <div class="input-group-append">
+              <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-reference="parent"></button>
+              <div id="dropdown-menu-genrer" class="dropdown-menu dropdown-menu-right scrollable-menu">
+                <a class="dropdown-item active" href="#" api-value="">All</a>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <!-- col year -->
-      <div class="col-4">
-        <p class="m-0">Released Year: </p>
-        <div class="input-group">
-          <input type="text" id="input-year" api-value="" class="form-control bg-white" aria-label="Text input with dropdown button" value="Any" disabled>
-          <div class="input-group-append">
-            <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-reference="parent"></button>
-            <div id="dropdown-menu-year" class="dropdown-menu dropdown-menu-right scrollable-menu">
-              <a class="dropdown-item active" href="#" api-value="">Any</a>
+        <!--⬆ col gender ⬆-->
+        
+        <!--⬇ col year ⬇-->
+        <div class="col-4">
+          <p class="m-0">Released Year: </p>
+          <div class="input-group">
+            <input type="text" id="input-year" api-value="" class="form-control bg-white" aria-label="Text input with dropdown button" value="Any" disabled>
+            <div class="input-group-append">
+              <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-reference="parent"></button>
+              <div id="dropdown-menu-year" class="dropdown-menu dropdown-menu-right scrollable-menu">
+                <a class="dropdown-item active" href="#" api-value="">Any</a>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <div class="col-4">
-        <p class="m-0">Platform: </p>
-        <div class="input-group">
-          <input type="text" id="input-platform" api-value="" class="form-control bg-white" aria-label="Text input with dropdown button" value="Any" disabled>
-          <div class="input-group-append">
-            <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-reference="parent"></button>
-            <div id="dropdown-menu-platform" class="dropdown-menu  dropdown-menu-right scrollable-menu">
-              <a class="dropdown-item active" href="#" api-value="">Any</a>
+        <!--⬆ col year ⬆-->
+        
+        <!--⬇ col platform ⬇-->
+        <div class="col-4">
+          <p class="m-0">Platform: </p>
+          <div class="input-group">
+            <input type="text" id="input-platform" api-value="" class="form-control bg-white" aria-label="Text input with dropdown button" value="Any" disabled>
+            <div class="input-group-append">
+              <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-reference="parent"></button>
+              <div id="dropdown-menu-platform" class="dropdown-menu  dropdown-menu-right scrollable-menu">
+                <a class="dropdown-item active" href="#" api-value="">Any</a>
+              </div>
             </div>
           </div>
         </div>
+        <!--⬆ col platform ⬆-->
       </div>
-    </div> <!-- /row options -->
+      <!--⬆ row options ⬆-->
+    </form>
+    <!--⬆ form ⬆-->
     
     <br>
     <hr>
     <br>
     
-    <!-- resutls -->
+    <!--⬇ row resutls ⬇-->
     <div class="row results">
     </div>
-    <!-- /row results -->
+    <!--⬆ row results ⬆-->
     
-    <div class="row mt-4">
+    <!--⬇ row footer ⬇-->
+    <div class="row mt-4 mb-3">
       <div class="col-12">
         <h2 class="text-center mb-2">🧑🏽</h2>
         <h5 class="text-center mt-0 font-weight-bold">Made by Edward Angeles</h5>
       </div>
     </div>
-  </div> <!-- /container -->
+    <!--⬆ row footer ⬆-->
+    
+  </div>
+  <!--⬆ container ⬆-->
   
   <!-- Bootstrap -->
   <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>

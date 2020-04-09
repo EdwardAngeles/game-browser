@@ -1,9 +1,3 @@
-const inputTitle    = document.querySelector('#input-title' )
-const inputGenres   = document.querySelector('#input-genres')
-const inputYear     = document.querySelector('#input-year')
-const inputPlatform = document.querySelector('#input-platform')
-const btnSearch     = document.querySelector('#btn-search')
-
 const onDropdownItemSelected = function(e) {
   e.preventDefault()
   

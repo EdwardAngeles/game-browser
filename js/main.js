@@ -1,25 +1,13 @@
-import {fetchGames, fetchGenres} from './fetcher.js'
-import {renderGame, renderGenres, renderPlatforms, renderLast10Years} from './render.js'
+import {fetchGames} from './fetcher.js'
+import * as render from './render.js'
 import {createGamesFromResults} from './game.js'
-import * as nothing from './event-listener.js'
+import './event-listener.js'
 ;
 
-setTimeout(async () => {
-  const options = {title: 'gta'}
-  const results = await fetchGames(options)
-  const games   = createGamesFromResults(results)
-  console.log(results)
-  games.forEach((game) => {
-    console.log(game.genres.name)
-    renderGame(game)
-  })
-}, 500)
-
-;
 (async () => {
-  await renderGenres()
-  await renderPlatforms()
-  renderLast10Years()
+  await render.renderGenres()
+  await render.renderPlatforms()
+  render.renderLast25Years()
   
   document.querySelector('#btn-search').addEventListener('click', async (e) => {
     e.preventDefault()
@@ -36,10 +24,8 @@ setTimeout(async () => {
     const options = {title, year, platform, genre}
     const results = await fetchGames(options)
     const games   = createGamesFromResults(results)
-    console.log(results)
-    games.forEach((game) => {
-      console.log(game.genres.name)
-      renderGame(game)
-    })
+    
+    if (games.length === 0) render.renderNothingFound()
+    if (games.length !== 0) games.forEach(game => render.renderGame(game))
   })
 })()

@@ -1,5 +1,5 @@
 import {fetchGenres, fetchPlatforms} from './fetcher.js'
-import {onDropdownItemSelected} from './event-listener.js'
+import {onDropdownItemSelected     } from './event-listener.js'
 
 const renderGame = (game) => {
   const htmlGameCard = stringToHTML(`
@@ -16,12 +16,66 @@ const renderGame = (game) => {
             <span class="font-weight-bold">Plaforms: </span>
             ${game.platforms.map(platform => `<span class="badge badge-danger">&nbsp;${platform.platform.name}&nbsp;</span>`).join(' ')}
           </p>
-          <a href="#!" class="btn btn-primary">Go somewhere</a>
+          <p class="text-right mb-0">
+          ${game.video_url ?
+            `<a href="#" class="btn btn-primary" data-toggle="modal" data-target="#modal-${game.id}"><i class="fas fa-eye"></i></a>`
+           :`<a href="#" class="btn btn-primary disabled" data-toggle="modal" data-target="#modal-${game.id}"><i class="fas fa-eye-slash"></i></a>`}
+          </p>
         </div>
       </div>
     </div>`)
-  
+  const renderedModal = renderModal(game)
+  if (game.video_url) htmlGameCard.appendChild(renderedModal)
   document.querySelector('.results').appendChild(htmlGameCard)
+  renderedModal.addEventListener('shown.bs.modal', e => {
+    console.log('1')
+  })
+}
+
+const renderModal = (game) => {
+  const htmlModal = stringToHTML(`
+    <!-- Modal -->
+    <div class="modal fade" id="modal-${game.id}" tabindex="-1" role="dialog" aria-labelledby="modal-${game.id}-label" aria-hidden="true">
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modal-${game.id}-label">${game.title}</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">×</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="embed-responsive embed-responsive-16by9">
+              <video src="${game.video_url}"></video>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>`)
+    // only able to handle show/hide event with jquery
+    $(htmlModal).on('shown.bs.modal', e => {
+      const video = $(htmlModal).find('video').get(0)
+      video.currentTime = 0
+      video.play()
+    })
+    $(htmlModal).on('hide.bs.modal', e => $(htmlModal).find('video').trigger('pause'))
+    
+    return htmlModal
+}
+
+const renderNothingFound = () => {
+  const htmlAlert = stringToHTML(`
+    <div class="col-12">
+      <div class="alert alert-info" role="alert">
+        <h4 class="alert-heading">😓 Nothing Found!</h4>
+        Adjust your search criteria and give it another try.
+      </div>
+    </div>`)
+  
+  document.querySelector('.results').appendChild(htmlAlert)
 }
 
 const renderGenres = async () => {
@@ -46,7 +100,7 @@ const renderPlatforms = async () => {
   })
 }
 
-const renderLast10Years = () => {
+const renderLast25Years = () => {
   const menu = document.querySelector('#dropdown-menu-year')
   
   for (let i = 0; i <= 25; i++) {
@@ -63,4 +117,4 @@ const stringToHTML = (str) => {
 	return doc.body.firstChild;
 };
 
-export {renderGame, renderGenres, renderLast10Years, renderPlatforms}
+export {renderGame, renderGenres, renderLast25Years, renderPlatforms, renderNothingFound}
